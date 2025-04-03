@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5d);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Top Container */
+.top-container {
+  height: 40vh;
+  width: 100%;
+  background: rgba(255, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background 0.5s ease-in-out;
+}
+
+.top-container:hover {
+  background: rgba(255, 0, 0, 0.9);
+}
+
+h1 {
+  font-style: italic;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  font-size: 2rem;
+}
+
+/* Form Styling */
+#form {
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0px 10px 30px rgba(255, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#form:hover {
+  transform: scale(1.02);
+}
+
+#form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: background 0.3s;
+}
+
+#form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#form input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Convert Button */
+#form button {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff5757, #ff0000);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+#form button:hover {
+  background: linear-gradient(135deg, #ff0000, #ff5757);
+  transform: translateY(-3px);
+}
+
+/* Bottom Container */
+.bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  width: 100%;
+}
+
+/* Error Message */
+.errors {
+  max-width: 400px;
+  padding: 12px;
+  color: red;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid red;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Download Button */
+#download-btn {
+  padding: 12px 20px;
+  color: white;
+  background: linear-gradient(135deg, #ff5757, #ff0000);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+#download-btn:hover {
+  background: linear-gradient(135deg, #ff0000, #ff5757);
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bottom-container {
+    width: 90%;
+    margin: auto;
+  }
+
+  #form, .success {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #form input {
+    width: 100%;
+  }
+}
